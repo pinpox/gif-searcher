@@ -39,11 +39,18 @@
         in
         rec {
 
+          gif-infinite = pkgs.writeShellApplication {
+              name = "show-gif";
+              text = ''
+                URL=$(${get-gif-url}/bin/get-gif-url "$1")
+                ${pkgs.mpv}/bin/mpv --loop-file='inf' --no-osc --vo=tct --really-quiet "$URL"
+              '';
+            };
+
           default = pkgs.writeShellApplication {
               name = "show-gif";
               text = ''
                 URL=$(${get-gif-url}/bin/get-gif-url "$1")
-                echo "$URL"
                 ${pkgs.mpv}/bin/mpv --no-osc --vo=tct --really-quiet "$URL"
               '';
             };
