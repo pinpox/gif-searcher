@@ -1,9 +1,9 @@
 # Usage
 
 ```
-nix run .# -- "shurg"
+nix run .# -- "shrug"
 
 # or
 
-nix run github:pinpox/gif-searcher "shurg"
+nix run github:pinpox/gif-searcher "shrug"
 ```
