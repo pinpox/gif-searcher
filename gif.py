@@ -35,7 +35,7 @@ def _tenor(query, cache):
     return _get(url, cache)
 
 
-def main():
+def main() -> None:
     if len(sys.argv) != 2:
         print("Usage: python gif.py <search_term>")
         sys.exit(1)
